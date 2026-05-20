@@ -2,6 +2,9 @@
 
 Interactive visualization of a nonlinear eigenvalue problem with eigenvector dependency (NEPv).
 
+Demo
+<video src="assets/demo.mp4" width="600" controls autoplay loop muted></video>
+
 ---
 
 ## Run Locally
@@ -36,7 +39,7 @@ Open the local address shown in the terminal (usually http://localhost:5173).
             
 ## Problem Statement & Motivation
 
-In a Standard Eigenvalue Problem, the matrix is static: Ax = λx [1]. However, in a Nonlinear Eigenvalue Problem with eigenvector dependency (NEPv), the matrix operator depends on the eigenvector itself: A(x)x = λx.
+In a Standard Eigenvalue Problem, the matrix is static: $Ax = \lambda x$ [1]. However, in a Nonlinear Eigenvalue Problem with eigenvector dependency (NEPv), the matrix operator depends on the eigenvector itself: $A(x)x = \lambda x$.
 
 This dynamic feedback loop appears in complex physical systems, such as calculating the Bose-Einstein condensate (Gross-Pitaevskii equation), where the potential depends on the quantum particle itself [2]. This project provides an interactive 2D visualization to build intuition for this feedback loop.
 
@@ -44,11 +47,11 @@ This dynamic feedback loop appears in complex physical systems, such as calculat
 
 To solve this 2x2 NEPv visually, the application implements a variation of the Nonlinear Power Method [3]. The iterative steps computed on each click are:
 
-Normalization: x_n = x / ||x|| (Crucial to prevent vector explosion).
+**Normalization**: $x_n = \frac{x}{||x||}$ (Crucial to prevent vector explosion).
 
-Matrix Application: y = A(x_n)x_n (The matrix dynamically updates based on the normalized vector).
+**Matrix Application**: $y = A(x_n)x_n$ (The matrix dynamically updates based on the normalized vector).
 
-Eigenvalue Approximation: λ ~= x_n^T * y (Computed using the Generalized Rayleigh Quotient).
+**Eigenvalue Approximation**: $\lambda \approx x_n^T y$ (Computed using the Generalized Rayleigh Quotient).
 
 ## Why Iteration Converges
 
@@ -56,7 +59,7 @@ The iteration acts as a fixed-point process. Starting from an initial vector x, 
 
 If the process stabilizes, the updated vector eventually stops changing significantly:
 
-x_(n+1) ≈ x_n
+$$x_{n+1} \approx x_n$$
 
 At that point, the dynamically generated matrix approximately preserves the direction of the vector, meaning the system approaches a self-consistent nonlinear eigenvector solution.
 
