@@ -66,5 +66,7 @@ The mathematical model, iteration logic, normalization process, and eigenvalue c
 
 #                References:
 1.Trefethen, L. N., & Bau, D. Numerical Linear Algebra. SIAM, 1997.
+
 2.Altmann R. (2019). Iteration methods for nonlinear PDE eigenvalue problems (Presentation).
+
 3.Eastman, S., & Estep, D. A power method for nonlinear operators. Applicable Analysis.
