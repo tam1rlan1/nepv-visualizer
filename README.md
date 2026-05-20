@@ -47,6 +47,18 @@ Normalization: x_n = x / ||x|| (Crucial to prevent vector explosion).
 Matrix Application: y = A(x_n)x_n (The matrix dynamically updates based on the normalized vector).
 Eigenvalue Approximation: λ ~= x_n^T * y (Computed using the Generalized Rayleigh Quotient).
 
+#             Why Iteration Converges
+
+The iteration acts as a fixed-point process. Starting from an initial vector x, the system repeatedly constructs a matrix A(x), applies it to the vector, and normalizes the result.
+
+If the process stabilizes, the updated vector eventually stops changing significantly:
+
+x_(n+1) ≈ x_n
+
+At that point, the dynamically generated matrix approximately preserves the direction of the vector, meaning the system approaches a self-consistent nonlinear eigenvector solution.
+
+This behavior is conceptually similar to the classical power iteration method, where repeated matrix application amplifies stable dominant directions while suppressing unstable ones.
+
 #                Evaluation & Experimental Results
 
 Dataset: N/A (Interactive mathematical visualization, not a data-driven ML model).
