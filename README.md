@@ -2,7 +2,7 @@
 
 Interactive visualization of a nonlinear eigenvalue problem with eigenvector dependency (NEPv).
 
-![Demo](assets/demo.gif)
+![Demo](assets/Demo.gif)
 
 ---
 
